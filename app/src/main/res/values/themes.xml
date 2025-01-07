@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DemoApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/black</item>
+         <item name="colorPrimaryVariant">@color/black</item>
+         <item name="colorOnPrimary">@color/black</item>
+         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="Theme.DemoApp" parent="Base.Theme.DemoApp" />
+
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <!-- Splash screen background color -->
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <!-- App logo -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/appstore</item>
+        <!-- Animation duration -->
+        <item name="postSplashScreenTheme">@style/Base.Theme.DemoApp</item>
+    </style>
+</resources>
