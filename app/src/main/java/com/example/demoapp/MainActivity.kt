@@ -1,5 +1,6 @@
 package com.example.demoapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import android.widget.Button
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Thread.sleep(3000)
@@ -15,11 +17,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Explicit Intent
-        val explicitButton = findViewById<Button>(R.id.explicitButton)
+//        val explicitButton = findViewById<Button>(R.id.explicitButton)
+//        explicitButton.setOnClickListener {
+//            val explicitInent = Intent(this, ScreenActiviy2::class.java)
+//            startActivity(explicitInent)
+//            finish()
+
+              val explicitButton = findViewById<Button>(R.id.explicitButton)
         explicitButton.setOnClickListener {
-            val explicitInent = Intent(this, ScreenActiviy2::class.java)
-            startActivity(explicitInent)
-            finish()
+           val explicitInent = Intent(this, RecyclerViewActivity::class.java)
+           startActivity(explicitInent)
+           finish()
+
+        }
+
+        // Spinner button
+        val spinnerButton = findViewById<Button>(R.id.spinnerButton)
+        spinnerButton.setOnClickListener {
+            val spinnerIntent = Intent(this, SpinnerActivity::class.java)
+            startActivity(spinnerIntent)
+
         }
 
         // Implicit Intent

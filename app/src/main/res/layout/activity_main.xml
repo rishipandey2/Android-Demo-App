@@ -25,7 +25,19 @@
         android:text="Implicit Intent"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="320dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/spinnerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Spinner"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:layout_marginTop="365dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

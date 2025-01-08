@@ -15,9 +15,9 @@ class ScreenActiviy2 : AppCompatActivity() {
 
         val listView: ListView = findViewById(R.id.listView)
         val listItems = arrayOf("Read a book" ,
-                "Create a Project" ,
-                        "Learn Kotlin" ,
-                                "Go for shopping" ,
+            "Create a Project" ,
+            "Learn Kotlin" ,
+            "Go for shopping" ,
             "Attend a seminar")
 
 
