@@ -1,11 +1,13 @@
 package com.example.demoapp
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
 class MainActivity : AppCompatActivity() {
@@ -34,8 +36,9 @@ class MainActivity : AppCompatActivity() {
         // Spinner button
         val spinnerButton = findViewById<Button>(R.id.spinnerButton)
         spinnerButton.setOnClickListener {
-            val spinnerIntent = Intent(this, SpinnerActivity::class.java)
-            startActivity(spinnerIntent)
+            showAlertDialog()
+//            val spinnerIntent = Intent(this, SpinnerActivity::class.java)
+//            startActivity(spinnerIntent)
 
         }
 
@@ -48,5 +51,25 @@ class MainActivity : AppCompatActivity() {
             val implicitIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             startActivity(implicitIntent)
         }
+    }
+
+    private fun showAlertDialog(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Spinner")
+            .setMessage("Do you want to open the spinner ?")
+            .setPositiveButton("Yes"){dialog, which ->
+//                Toast.makeText(this, "The spinner is successfully opened", Toast.LENGTH_SHORT).show()
+                val spinnerIntent = Intent(this, SpinnerActivity::class.java)
+                startActivity(spinnerIntent)
+
+
+            }
+            .setNegativeButton("No"){dialog, which ->
+                dialog.dismiss()
+            }
+
+        val alertDialog:AlertDialog = builder.create()
+        alertDialog.show()
+
     }
 }
